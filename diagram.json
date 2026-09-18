@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Kila",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp32", "top": 50, "left": 100, "attrs": {} },
+    { "type": "wokwi-ds18b20", "id": "ds1", "top": 50, "left": 380, "attrs": { "deviceID": "111111111111", "temperature": "22" } },
+    { "type": "wokwi-ds18b20", "id": "ds2", "top": 150, "left": 380, "attrs": { "deviceID": "222222222222", "temperature": "24" } },
+    { "type": "wokwi-ds18b20", "id": "ds3", "top": 250, "left": 380, "attrs": { "deviceID": "333333333333", "temperature": "26" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 80, "left": 310, "attrs": { "value": "4700" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 350, "left": 380, "attrs": {} }
+  ],
+  "connections": [
+    ["esp32:3V3", "ds1:VCC", "red", []],
+    ["esp32:3V3", "ds2:VCC", "red", []],
+    ["esp32:3V3", "ds3:VCC", "red", []],
+    ["esp32:GND.1", "ds1:GND", "black", []],
+    ["esp32:GND.1", "ds2:GND", "black", []],
+    ["esp32:GND.1", "ds3:GND", "black", []],
+    ["esp32:D4", "ds1:DQ", "green", []],
+    ["ds1:DQ", "ds2:DQ", "green", []],
+    ["ds2:DQ", "ds3:DQ", "green", []],
+    ["r1:1", "esp32:3V3", "red", []],
+    ["r1:2", "esp32:D4", "orange", []],
+    ["esp32:3V3", "pot1:VCC", "red", []],
+    ["esp32:GND.1", "pot1:GND", "black", []],
+    ["esp32:D34", "pot1:SIG", "yellow", []],
+    ["esp32:TX0", "$serialMonitor:RX", "", []],
+    ["esp32:RX0", "$serialMonitor:TX", "", []]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "convertEol": true
+  }
+}

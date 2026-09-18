@@ -1,0 +1,5 @@
+.git/
+.kilo/
+build/
+session-*.md
+node_modules/

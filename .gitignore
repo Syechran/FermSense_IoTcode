@@ -1,0 +1,14 @@
+build/esp32.esp32.esp32/*
+!build/esp32.esp32.esp32/SensorSourDough.ino.bin
+!build/esp32.esp32.esp32/SensorSourDough.ino.bootloader.bin
+!build/esp32.esp32.esp32/SensorSourDough.ino.partitions.bin
+!build/esp32.esp32.esp32/SensorSourDough.ino.elf
+
+.kilo/
+session-*.md
+node_modules/
+*.o
+*.d
+*.a
+*.tmp
+.DS_Store
