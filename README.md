@@ -8,7 +8,7 @@ Alur data: sensor (suhu + pH) -> ESP32 -> WiFi/HTTPS -> API Vercel -> Supabase +
 
 ---
 
-## Panduan Pemula (Windows 11)
+## Panduan Windows 11
 
 ### Yang TIDAK perlu kamu lakukan
 
